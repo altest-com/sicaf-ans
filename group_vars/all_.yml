@@ -9,6 +9,9 @@ deployer_group: <your-user-group>
 api_repo_url: https://github.com/altest-com/sicaf-api
 spa_repo_url: https://github.com/altest-com/sicaf-spa
 
+# Whether to build spa
+build_spa: false
+
 # App Directory
 app_dir: '/home/{{ deployer_user }}/{{app_name}}'
 app_api_dir: '{{app_dir}}/sicaf-api'

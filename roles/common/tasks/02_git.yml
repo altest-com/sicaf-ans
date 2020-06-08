@@ -10,3 +10,4 @@
 
 - name: Clone or pull the latest sicaf-spa code
   git: repo={{ spa_repo_url }} dest={{ app_spa_dir }}
+  when: build_spa

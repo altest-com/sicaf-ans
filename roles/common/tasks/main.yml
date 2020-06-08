@@ -6,6 +6,7 @@
 - include: 03_dependencies.yml
 - include: 04_postgres.yml
 - include: 05_spa.yml
+  when: build_spa
 - include: 06_migrations.yml
 - include: 07_nginx.yml
 - include: 08_gunicorn.yml

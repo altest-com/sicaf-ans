@@ -16,6 +16,7 @@ build_spa: false
 app_dir: '/home/{{ deployer_user }}/{{app_name}}'
 app_api_dir: '{{app_dir}}/sicaf-api'
 app_spa_dir: '{{app_dir}}/sicaf-spa'
+app_spa_dist: '{{app_spa_dir}}/dist'
 env_file: '{{ app_dir }}/.env.prod'
 
 # DB Configuration

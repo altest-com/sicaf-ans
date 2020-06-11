@@ -10,4 +10,6 @@
 - include: 06_migrations.yml
 - include: 07_nginx.yml
 - include: 08_gunicorn.yml
-- include: 09_restart.yml
+- include: 09_redis.yml
+- include: 08_celery.yml
+- include: 11_restart.yml

@@ -36,6 +36,12 @@ api_admin_user: '{{ deployer_user }}'
 api_admin_password: <your-admin-password>
 api_admin_email: <your-admin-email>
 
+# Celery variables
+celery_bin: '{{ venv_dir }}/bin/celery'
+celery_log_level: INFO
+celerybeat_pid_file: /var/run/celery/beat.pid
+celerybeat_log_file: /var/log/celery/beat.log
+
 # Server
 server_ip: <your-server-ip>
 secret_key: <your-secret-key>

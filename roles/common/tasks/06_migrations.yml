@@ -23,6 +23,15 @@
     - api_admin_password is defined
     - api_admin_email is defined
 
+- name: Seed database with fixtures
+  shell:
+    cmd: >
+      set -a; . {{ env_file }}; set +a;
+      {{ python_bin }} manage.py dbseed
+    chdir: '{{ app_api_dir }}'
+  when:
+    - run_dbseed
+
 - name: Get all static files
   shell:
     cmd: 'set -a; . {{ env_file }}; set +a; {{ python_bin }} manage.py collectstatic --noinput'

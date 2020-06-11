@@ -36,6 +36,9 @@ api_admin_user: '{{ deployer_user }}'
 api_admin_password: <your-admin-password>
 api_admin_email: <your-admin-email>
 
+# Django commands
+run_dbseed: false
+
 # Celery variables
 celery_bin: '{{ venv_dir }}/bin/celery'
 celery_log_level: INFO

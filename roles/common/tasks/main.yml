@@ -11,5 +11,7 @@
 - include: 07_nginx.yml
 - include: 08_gunicorn.yml
 - include: 09_redis.yml
+  when: celery_enable
 - include: 10_celery.yml
+  when: celery_enable
 - include: 11_restart.yml

@@ -42,6 +42,7 @@ api_admin_email: <your-admin-email>
 run_dbseed: false
 
 # Celery variables
+celery_enable: true
 celery_bin: '{{ venv_dir }}/bin/celery'
 celery_log_level: INFO
 celerybeat_pid_file: /var/run/celery/beat.pid

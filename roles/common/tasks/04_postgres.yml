@@ -18,6 +18,14 @@
   service: name=postgresql enabled=yes state=started
   become: yes
 
+- name: Drop database
+  postgresql_db:
+    name: '{{ db_name }}'
+    state: absent
+  become_user: postgres
+  become: yes
+  when: db_drop
+
 - name: Create database
   postgresql_db:
     name: '{{ db_name }}'

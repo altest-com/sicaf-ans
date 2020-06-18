@@ -11,6 +11,7 @@ spa_repo_url: https://github.com/altest-com/sicaf-spa
 
 # Whether to build spa
 build_spa: false
+link_spa: true
 
 # App Directory
 app_dir: '/home/{{ deployer_user }}/{{app_name}}'

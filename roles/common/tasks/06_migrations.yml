@@ -34,5 +34,5 @@
 
 - name: Get all static files
   shell:
-    cmd: 'set -a; . {{ env_file }}; set +a; {{ python_bin }} manage.py collectstatic --noinput'
+    cmd: 'set -a; . {{ env_file }}; set +a; {{ python_bin }} manage.py collectstatic --noinput --clear'
     chdir: '{{ app_api_dir }}'

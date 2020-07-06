@@ -4,7 +4,7 @@
 
 - name: Download spa dist
   shell:
-    cmd: 'wget -O dist "{{spa_dist_url}}"'
+    cmd: 'wget -O dist.tar.xz "{{spa_dist_url}}"'
     chdir: '{{ app_spa_dir }}'
 
 

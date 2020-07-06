@@ -18,7 +18,7 @@
       {{ python_bin }} manage.py createadmin
       {{ api_admin_user }} {{ api_admin_password }} {{ api_admin_email }}
     chdir: '{{ app_api_dir }}'
-  when: 
+  when:
     - api_admin_user is defined
     - api_admin_password is defined
     - api_admin_email is defined

@@ -5,12 +5,12 @@
 - name: Download spa dist
   get_url:
     url: '{{spa_dist_url}}'
-    dest: '{{ app_spa_dir }}/dist'
+    dest: '{{ app_spa_dir }}/dist.tar.xz'
     force: true
 
 
 - name: Uncompress spa dist
   unarchive:
     remote_src: true
-    src: '{{ app_spa_dir }}/dist'
+    src: '{{ app_spa_dir }}/dist.tar.xz'
     dest: '{{ app_spa_dir }}/dist'

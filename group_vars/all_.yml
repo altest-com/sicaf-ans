@@ -9,7 +9,11 @@ deployer_group: <your-user-group>
 api_repo_url: https://github.com/altest-com/sicaf-api
 spa_repo_url: https://github.com/altest-com/sicaf-spa
 
-# Whether to build spa
+# Download link to build version of spa
+spa_dist_url: <spa-dist-url>
+
+# Spa building and linking
+get_spa: true
 build_spa: false
 link_spa: true
 

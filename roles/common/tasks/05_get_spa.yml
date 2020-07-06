@@ -9,11 +9,9 @@
 
 
 - name: Uncompress spa dist
-  unarchive:
-    remote_src: true
-    src: '{{ app_spa_dir }}/dist.tar.xz'
-    dest: '{{ app_spa_dir }}'
-
+  shell:
+    cmd: 'tar -xf dist.tar.xz'
+    chdir: '{{ app_spa_dir }}'
 
 #- name: Download spa dist
 #  get_url:

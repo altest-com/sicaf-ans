@@ -6,3 +6,12 @@ sicaf-ans
 
 Configuration files for automate deployment of the SICAF project using Ansible.
 
+```bash
+sudo apt install python3-wheel python3-pip python3-apt
+sudo apt install ansible
+git clone http://github.com/altest-com/sicaf-api
+cd sicaf-api
+cp group_vars/__all.yml /group_vars/all.yml
+bash dnfas/ansible_deploy.sh
+```
+

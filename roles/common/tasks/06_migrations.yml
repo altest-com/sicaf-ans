@@ -39,7 +39,7 @@
 
 - name: Seed database confirm
   pause:
-    prompt: 'Are you sure you want to SEED the project database "{{ db_name }}"? This action is IRREVERSIBLE. Press Ctrl+C to terminate if you are not sure of this.'
+    prompt: 'Are you sure you want to SEED the project database "{{ db_name }}"? This action is IRREVERSIBLE. Press Ctrl+C to terminate if you are not sure of this'
   when: run_dbseed
 
 - name: Seed database with fixtures

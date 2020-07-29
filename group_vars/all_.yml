@@ -12,11 +12,6 @@ spa_repo_url: https://github.com/altest-com/sicaf-spa
 # Download link to build version of spa
 spa_dist_url: <spa-dist-url>
 
-# Spa building and linking
-get_spa: true
-build_spa: false
-link_spa: true
-
 # App Directory
 app_dir: '/home/{{ deployer_user }}/{{app_name}}'
 app_api_dir: '{{app_dir}}/sicaf-api'
@@ -29,11 +24,6 @@ db_name: '{{ app_name }}'
 db_user: '{{ deployer_user }}'
 db_host: localhost
 db_password: <your-db-password>
-
-###############################################################################
-# CAUTION WITH THIS!!!!!!!
-###############################################################################
-db_drop: false
 
 # Application Dependencies Setup
 venv_root: '/home/{{ deployer_user }}/envs'
@@ -48,10 +38,6 @@ api_admin_email: <your-admin-email>
 
 # Django commands
 
-###############################################################################
-# CAUTION WITH THIS!!!!!!!
-###############################################################################
-run_dbseed: false
 
 # Celery variables
 celery_enable: true
@@ -64,7 +50,32 @@ celerybeat_log_file: /var/log/celery/beat.log
 server_name: <your-server-name>
 secret_key: <your-secret-key>
 
+
+###############################################################################
+# Control variables
+###############################################################################
+
+# Spa building and linking
+get_spa: true
+build_spa: false
+link_spa: true
+
+# Configure nginx
+config_nginx: true
+
 # SSL Certificate
 run_certbot: false
+
+#-------------------------------------------------------------------------------
+# Caution with this!!!!!!!
+#-------------------------------------------------------------------------------
+# If set to True, the database will be dropped
+db_drop: false
+
+#-------------------------------------------------------------------------------
+# Caution with this!!!!!!!
+#-------------------------------------------------------------------------------
+run_dbseed: false
+
 
 

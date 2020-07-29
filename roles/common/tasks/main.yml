@@ -11,7 +11,9 @@
   when: get_spa
 - include: 06_migrations.yml
 - include: 07_nginx.yml
+  when: config_nginx
 - include: 08_gunicorn.yml
+  when: config_nginx
 - include: 09_redis.yml
   when: celery_enable
 - include: 10_celery.yml

@@ -56,4 +56,7 @@ celerybeat_log_file: /var/log/celery/beat.log
 server_name: <your-server-name>
 secret_key: <your-secret-key>
 
+# SSL Certificate
+run_cerbot: false
+
 

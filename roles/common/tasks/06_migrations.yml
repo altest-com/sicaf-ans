@@ -23,14 +23,18 @@
     - api_admin_password is defined
     - api_admin_email is defined
 
+- name: Seed database confirm
+  pause:
+    prompt: 'Are you sure you want to SEED the project database "{{ db_name }}"? This action is IRREVERSIBLE. Press Ctrl+C to terminate if you are not sure of this.'
+  when: run_dbseed
+
 - name: Seed database with fixtures
   shell:
     cmd: >
       set -a; . {{ env_file }}; set +a;
       {{ python_bin }} manage.py dbseed
     chdir: '{{ app_api_dir }}'
-  when:
-    - run_dbseed
+  when: run_dbseed
 
 - name: Get all static files
   shell:

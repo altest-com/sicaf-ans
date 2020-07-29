@@ -1,0 +1,22 @@
+##
+# Restart gunicorn and nginx
+##
+
+- name: restart gunicorn
+  service:
+    name: gunicorn
+    state: restarted
+    enabled: yes
+  become: yes
+
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
+  become: yes
+
+- name:Certbot information
+  pause:
+    prompt: 'IMPORTANT: To enable SSL run "sudo certbot --nginx -d {{server_name}}.com  -d www.{{ server_name }}.com"'
+  when: run_certbot

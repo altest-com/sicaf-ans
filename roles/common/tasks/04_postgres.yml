@@ -10,13 +10,14 @@
       - postgresql
       - postgresql-contrib
 
-#- name: Run initdb command
-#  raw: postgresql-setup initdb
-#  become: yes
-
 - name: Start and enable postgres
   service: name=postgresql enabled=yes state=started
   become: yes
+
+- name: Drop database confirm
+  pause:
+    prompt: 'Are you sure you want to DROP the project database "{{ db_name }}"? This action is IRREVERSIBLE. Press Ctrl+C to terminate if you are not sure of this.'
+  when: db_drop
 
 - name: Drop database
   postgresql_db:

@@ -12,6 +12,6 @@ sudo apt install ansible
 git clone http://github.com/altest-com/sicaf-api
 cd sicaf-api
 cp group_vars/__all.yml /group_vars/all.yml
-bash dnfas/ansible_deploy.sh
+bash deploy.sh
 ```
 

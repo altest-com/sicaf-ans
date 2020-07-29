@@ -16,7 +16,7 @@
     enabled: yes
   become: yes
 
-- name:Certbot information
+- name: Certbot information
   pause:
     prompt: 'IMPORTANT: To enable SSL run "sudo certbot --nginx -d {{server_name}}.com  -d www.{{ server_name }}.com"'
   when: run_certbot

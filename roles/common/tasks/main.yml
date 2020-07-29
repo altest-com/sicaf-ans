@@ -17,5 +17,5 @@
 - include: 10_celery.yml
   when: celery_enable
 - include: 11_certbot.yml
-  when: run_cerbot
+  when: run_certbot
 - include: 12_restart.yml

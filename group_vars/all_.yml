@@ -36,11 +36,7 @@ api_admin_user: '{{ deployer_user }}'
 api_admin_password: <your-admin-password>
 api_admin_email: <your-admin-email>
 
-# Django commands
-
-
 # Celery variables
-celery_enable: true
 celery_bin: '{{ venv_dir }}/bin/celery'
 celery_log_level: INFO
 celerybeat_pid_file: /var/run/celery/beat.pid
@@ -65,6 +61,9 @@ config_nginx: true
 
 # SSL Certificate
 run_certbot: false
+
+# Enable celery
+celery_enable: true
 
 #-------------------------------------------------------------------------------
 # Caution with this!!!!!!!

@@ -17,6 +17,7 @@
     mode: u=rwx,g=rx,o=rx
     owner: root
     creates: /tmp/redis-stable
+  become: yes
 
 - name: Make redis
   make: chdir=/tmp/redis-stable

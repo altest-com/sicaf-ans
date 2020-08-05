@@ -28,7 +28,9 @@
   become: yes
 
 - name: Create redis directories
-  file: path={{ item }} state=directory
+  file:
+    path: '{{ item }}'
+    state: directory
   with_items:
     - /etc/redis
     - /var/lib/redis
@@ -78,7 +80,7 @@
 
 - name: Set redis permissions
   file:
-    path: {{ item }}
+    path: '{{ item }}'
     state: touch
     owner: redis
     group: redis

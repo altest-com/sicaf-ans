@@ -35,6 +35,7 @@
   with_items:
     - /etc/redis
     - /var/lib/redis
+    - /var/log/redis
   become: yes
 
 - name: Set redis default config
@@ -50,6 +51,14 @@
     src: redis.conf
     dest: /etc/redis/redis.conf
     mode: '644'
+  become: yes
+
+- name: disable Transparent Huge Pages (THP) support
+  lineinfile:
+    dest: /etc/rc.local
+    insertbefore: '^exit 0$'
+    line: 'echo never > /sys/kernel/mm/transparent_hugepage/enabled'
+    state: present
   become: yes
 
 - name: Start and enable redis service
@@ -89,6 +98,7 @@
   with_items:
     - /etc/redis
     - /var/lib/redis
+    - /var/log/redis
   become: yes
 
 - name: Start and enable redis service

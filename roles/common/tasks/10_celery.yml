@@ -3,7 +3,7 @@
 ##
 - name: Create run directory
   file:
-    path: /var/run/celery
+    path: '{{ celery_run_dir }}'
     state: directory
     owner: '{{ deployer_user }}'
     group: '{{ deployer_group }}'
@@ -11,16 +11,29 @@
 
 - name: Create log directory
   file:
-    path: /var/log/celery
+    path: '{{ celery_log_dir }}'
     state: directory
     owner: '{{ deployer_user }}'
     group: '{{ deployer_group }}'
+  become: yes
+
+- name: Create the celery service
+  template:
+    src: celery.service
+    dest: /etc/systemd/system/celery.service
   become: yes
 
 - name: Create the celery beat service
   template:
     src: celerybeat.service
     dest: /etc/systemd/system/celerybeat.service
+  become: yes
+
+- name: Start and enable celery
+  service:
+    name: celery.service
+    enabled: yes
+    state: started
   become: yes
 
 - name: Start and enable celerybeat

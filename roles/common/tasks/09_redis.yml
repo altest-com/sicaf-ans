@@ -16,6 +16,7 @@
   template:
     src: redis.conf
     dest: /etc/redis/redis.conf
+    mode: '644'
   become: yes
 
 - name: Start and enable redis service

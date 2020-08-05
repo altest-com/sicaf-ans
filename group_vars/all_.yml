@@ -47,7 +47,7 @@ celery_bin: '{{ venv_dir }}/bin/celery'
 celery_nodes: w1
 
 # Extra command-line arguments to the worker
-celerty_opts: --time-limit=300 --concurrency=1
+celery_opts: --time-limit=300 --concurrency=1
 
 # Runtime directories
 celery_run_dir: /var/run/celery

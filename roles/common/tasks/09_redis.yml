@@ -10,6 +10,7 @@
     remote_src: yes
     src: /etc/redis/redis.conf
     dest: /etc/redis/default.conf
+    force: no
   become: yes
 
 - name: Set config

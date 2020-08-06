@@ -13,19 +13,18 @@
   unarchive:
     src: http://download.redis.io/redis-stable.tar.gz
     copy: no
-    dest: '/home/{{ deployer_user }}'
+    dest: '{{ libs_dir }}'
     mode: u=rwx,g=rx,o=rx
     owner: root
-    creates: '/home/{{ deployer_user }}/redis'
   become: yes
 
 - name: Make redis
   make:
-    chdir: '/home/{{ deployer_user }}/redis'
+    chdir: '{{ libs_dir }}/redis-stable'
 
 - name: Install redis
   make:
-    chdir: '/home/{{ deployer_user }}/redis'
+    chdir: '{{ libs_dir }}/redis-stable'
     target: install
   become: yes
 
@@ -42,7 +41,7 @@
 - name: Set redis default config
   copy:
     remote_src: yes
-    src: '/home/{{ deployer_user }}/redis/redis.conf'
+    src: '{{ libs_dir }}/redis-stable/redis.conf'
     dest: /etc/redis/default.conf
     force: no
   become: yes

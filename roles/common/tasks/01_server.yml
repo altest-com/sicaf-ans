@@ -41,6 +41,11 @@
     path: '{{ venv_root }}'
     state: directory
 
+- name: Create libs directory
+  file:
+    path: '{{ libs_dir }}'
+    state: directory
+
 - name: Create the enviroment file for django
   template:
     src: .env.prod

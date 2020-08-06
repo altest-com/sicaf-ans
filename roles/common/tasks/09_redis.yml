@@ -53,13 +53,6 @@
     mode: '644'
   become: yes
 
-- name: Start and enable redis service
-  service:
-    name: redis
-    enabled: yes
-    state: started
-  become: yes
-
 - name: Install redis service
   template:
     src: redis.service

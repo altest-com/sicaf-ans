@@ -15,8 +15,8 @@
     copy: no
     dest: '{{ libs_dir }}'
     mode: u=rwx,g=rx,o=rx
-    owner: root
-  become: yes
+    owner: '{{ deployer_user }}'
+    group: '{{ deployer_user }}'
 
 - name: Make redis
   make:

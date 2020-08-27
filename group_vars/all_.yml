@@ -92,6 +92,9 @@ run_certbot: false
 # Enable celery
 celery_enable: true
 
+# Update stats and inventories
+update_stats: false
+
 #-------------------------------------------------------------------------------
 # Caution with this!!!!!!!
 #-------------------------------------------------------------------------------

@@ -50,6 +50,14 @@
     chdir: '{{ app_api_dir }}'
   when: run_dbseed
 
+- name: Update system stats
+  shell:
+    cmd: >
+      set -a; . {{ env_file }}; set +a;
+      {{ python_bin }} manage.py update_stats
+    chdir: '{{ app_api_dir }}'
+  when: update_stats
+
 - name: Get all static files
   shell:
     cmd: 'set -a; . {{ env_file }}; set +a; {{ python_bin }} manage.py collectstatic --noinput --clear'

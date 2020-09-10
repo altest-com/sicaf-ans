@@ -3,17 +3,3 @@
     name: postgresql
     state: restarted
   become: yes
-
-- name: restart nginx
-  service:
-    name: nginx
-    state: restarted
-    enabled: yes
-  become: yes
-
-- name: restart gunicorn
-  service:
-    name: '{{ gunicorn_name }}'
-    state: restarted
-    enabled: yes
-  become: yes

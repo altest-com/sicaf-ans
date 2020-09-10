@@ -13,8 +13,3 @@
     name:
       - python-certbot-nginx
   become: yes
-
-- name: Obtain
-  shell:
-    cmd: 'set -a; . {{ env_file }}; set +a; {{ python_bin }} manage.py collectstatic --noinput --clear'
-    chdir: '{{ app_api_dir }}'

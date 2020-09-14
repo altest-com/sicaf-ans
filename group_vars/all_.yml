@@ -57,8 +57,8 @@ celery_name: 'celery-{{ app_name }}'
 celerybeat_name: 'celerybeat-{{ app_name }}'
 
 # Runtime directories
-celery_run_dir: '/var/run/celery-{{ app_name }}'
-celery_log_dir: '/var/log/celery-{{ app_name }}'
+celery_run_dir: '/var/run/celery/{{ app_name }}'
+celery_log_dir: '/var/log/celery/{{ app_name }}'
 
 # Pid files
 celery_pid_file: '{{ celery_run_dir }}/%n.pid'
@@ -99,6 +99,9 @@ config_nginx: true
 
 # SSL Certificate
 run_certbot: false
+
+# Setup redis
+setup_redis: true
 
 # Enable celery
 celery_enable: true

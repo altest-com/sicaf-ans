@@ -9,8 +9,11 @@ deployer_group: <your-user-group>
 api_repo_url: https://github.com/altest-com/sicaf-api
 spa_repo_url: https://github.com/altest-com/sicaf-spa
 
-# Download link to build version of spa
-spa_dist_url: <spa-dist-url>
+# AWS bucket files
+aws_access_key: <aws_access_key>
+aws_secret_key: <aws_secret_key>
+aws_bucket_name: altest-apps
+spa_file_name: sicaf-spa.zip
 
 # App Directory
 app_dir: '/home/{{ deployer_user }}/{{app_name}}'

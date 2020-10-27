@@ -24,7 +24,7 @@ env_file: '{{ app_dir }}/.env.prod'
 
 # DB Configuration
 db_name: '{{ app_name }}'
-db_user: '{{ deployer_user }}'
+db_user: '{{ app_name }}'
 db_host: localhost
 db_password: <your-db-password>
 

@@ -109,6 +109,9 @@ link_spa: true
 # Configure nginx
 config_nginx: true
 
+# Configure gunicorn
+config_gunicorn: true
+
 # SSL Certificate
 run_certbot: false
 

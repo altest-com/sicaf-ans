@@ -13,7 +13,7 @@
 - include: 07_nginx.yml
   when: config_nginx
 - include: 08_gunicorn.yml
-  when: config_nginx
+  when: config_gunicorn
 - include: 09_redis.yml
   when: setup_redis
 - include: 10_celery.yml

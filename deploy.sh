@@ -1,2 +1,2 @@
 #!/bin/bash
-ansible-playbook ./deploy.yml -K -u $USER -i ./hosts -v
+ansible-playbook ./deploy.yml -K -u $USER -i ./hosts -vvvv

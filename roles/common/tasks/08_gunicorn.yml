@@ -1,7 +1,7 @@
 ##
 # Set up Gunicorn
 ##
-- name: Create log directory
+- name: Create gunicorn log directory
   file:
     path: '{{ gunicorn_log_dir }}'
     state: directory

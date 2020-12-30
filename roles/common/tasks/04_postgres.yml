@@ -14,6 +14,18 @@
   service: name=postgresql enabled=yes state=started
   become: yes
 
+- name: Backup database
+  shell:
+    cmd: 'set -a; . {{ env_file }}; set +a; {{ python_bin }} manage.py dbbackup --noinput'
+    chdir: '{{ app_api_dir }}'
+  when: dbbackup
+
+- name: Backup database
+  shell:
+    cmd: 'set -a; . {{ env_file }}; set +a; {{ python_bin }} manage.py mediabackup --noinput'
+    chdir: '{{ app_api_dir }}'
+  when: mediabackup
+
 - name: Drop database confirm
   pause:
     prompt: 'Are you sure you want to DROP the project database "{{ db_name }}"? This action is IRREVERSIBLE. Press Ctrl+C to terminate if you are not sure of this'
@@ -44,3 +56,18 @@
   become_user: postgres
   notify:
     - restart postgres
+
+- name: Create a cron job to backup database
+  cron:
+    name: "backup sicaf database"
+    minute: "0"
+    hour: "3"
+    job: "cd {{ app_api_dir }}; set -a ;. {{ env_file }}; set +a; {{ python_bin }} manage.py dbbackup --noinput > /dev/null"
+
+
+- name: Create a cron job to backup media data
+  cron:
+    name: "backup sicaf media data"
+    minute: "0"
+    hour: "3"
+    job: "cd {{ app_api_dir }}; set -a ;. {{ env_file }}; set +a; {{ python_bin }} manage.py mediabackup --noinput > /dev/null"

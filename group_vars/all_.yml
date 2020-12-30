@@ -49,6 +49,11 @@ logrotate_file: '/etc/logrotate.d/{{ app_name }}'
 # Sentry
 sentry_dsn: <your-sentry-dsn>
 
+# AWS S3 bucket access
+s3_access_key=<s3_access_key>
+s3_secret_key=<s3_secret_key>
+s3_bucket_name=<s3_bucket_name>
+
 ###############################################################################
 # Celery variables
 ###############################################################################
@@ -123,6 +128,12 @@ celery_enable: true
 
 # Update stats and inventories
 update_stats: false
+
+# Backup database
+dbbackup: false
+
+# Backup media data
+mediabackup: false
 
 #-------------------------------------------------------------------------------
 # Caution with this!!!!!!!
